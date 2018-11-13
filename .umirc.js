@@ -11,7 +11,7 @@ export default {
       dynamicImport: {
         webpackChunkName: true,
       },
-      title: 'myapp',
+      title: 'yy',
       dll: true,
       routes: {
         exclude: [

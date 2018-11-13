@@ -3,5 +3,4 @@ src/public
 src/routes/chart/ECharts/theme
 src/routes/chart/highCharts/mapdata
 src/locales/_build/
-src/locales/**/*.js
 docs/**/*.js
