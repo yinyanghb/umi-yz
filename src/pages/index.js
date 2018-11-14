@@ -4,7 +4,7 @@ import Redirect from 'umi/redirect'
 class Index extends PureComponent{
   render(){
     return (
-      <Redirect to={'/account'}></Redirect>
+      <Redirect to={'/account/profit'}></Redirect>
     )
   }
 }
