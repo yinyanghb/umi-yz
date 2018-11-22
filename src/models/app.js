@@ -81,7 +81,8 @@ export default {
             })
           }
         } else {
-
+          
+          store.remove('user')
           router.push({
             pathname: '/login',
             search: stringify({

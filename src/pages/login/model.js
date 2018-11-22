@@ -8,9 +8,7 @@ export default {
 
   state: {},
   subscriptions:{
-    setup({dispatch}){
-      store.remove('user')
-    }
+    
   },
   effects: {
     *login({ payload }, { put, call, select }) {
