@@ -1,8 +1,10 @@
 
 // ref: https://umijs.org/config/
 import { resolve } from 'path'
+import { i18n } from './src/utils/config'
 export default {
   ignoreMomentLocale: true,
+  targets: { ie: 9 },
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -21,6 +23,25 @@ export default {
           /components\//,
           /services\//,
         ],
+        update:routes=>{
+          if (!i18n) return routes
+          const newRoutes = []
+          for(const item of routes[0].routes){
+            newRoutes.push(item)
+            if (item.path) {
+              newRoutes.push(
+                Object.assign({}, item, {
+                  path:
+                    `/:lang(${i18n.languages
+                      .map(item => item.key)
+                      .join('|')})` + item.path,
+                })
+              )
+            }
+          }
+          routes[0].routes = newRoutes
+          return routes
+        },
       },
       hardSource: true,
       fastClick:true
@@ -36,6 +57,7 @@ export default {
     themes: resolve(__dirname, './src/themes'),
     utils: resolve(__dirname, './src/utils'),
   },
+  extraBabelPresets: ['@lingui/babel-preset-react'],
   extraBabelPlugins: [
     [
       'import',
