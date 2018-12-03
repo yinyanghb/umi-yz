@@ -9,9 +9,10 @@ export default {
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
-      dva: true,
+      dva: { immer: true },
       dynamicImport: {
         webpackChunkName: true,
+        loadingComponent: './components/Loader/Loader',
       },
       title: 'yy',
       dll: true,
@@ -44,7 +45,7 @@ export default {
         },
       },
       hardSource: true,
-      fastClick:true
+      // fastClick:true
     }],
   ],
   alias: {

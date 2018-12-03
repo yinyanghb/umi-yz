@@ -1,5 +1,6 @@
 .loader {
-  background-color: #fff;
+  background: url(/main_bg.jpg) fixed center ;
+  background-size: cover;
   width: 100%;
   position: absolute;
   top: 0;
@@ -22,6 +23,7 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: rgba(0, 0, 0, .8)
   }
 
   .inner {
@@ -29,10 +31,10 @@
     height: 40px;
     margin: 0 auto;
     text-indent: -12345px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    border-right: 1px solid rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    border-left: 1px solid rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(225, 225, 225, 0.08);
+    border-right: 1px solid rgba(225, 225, 225, 0.08);
+    border-bottom: 1px solid rgba(225, 225, 225, 0.08);
+    border-left: 1px solid rgba(225, 225, 225, 0.7);
     border-radius: 50%;
     z-index: 100001;
 
@@ -47,7 +49,7 @@
     text-align: center;
     font-size: 12px;
     letter-spacing: 4px;
-    color: #000;
+    color: #fff;
   }
 
   &.hidden {

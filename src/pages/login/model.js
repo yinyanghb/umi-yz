@@ -1,4 +1,4 @@
-import router from 'umi/router'
+import {router} from 'utils'
 import store from 'store'
 import { loginRequest } from 'api'
 import { pathMatchRegexp } from 'utils'

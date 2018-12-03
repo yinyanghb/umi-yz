@@ -1,4 +1,4 @@
-import router from 'umi/router'
+import { router } from 'utils'
 import { stringify } from 'qs'
 import store from 'store'
 import { refreshToken } from 'api'
