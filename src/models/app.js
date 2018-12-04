@@ -75,7 +75,7 @@ export default {
               user,
             },
           })
-          if (pathMatchRegexp('/login', window.location.pathname)) {
+          if (pathMatchRegexp('/sign/login', window.location.pathname)) {
             router.push({
               pathname: '/account/profit',
             })
@@ -84,7 +84,7 @@ export default {
           
           store.remove('user')
           router.push({
-            pathname: '/login',
+            pathname: '/sign/login',
             search: stringify({
               from: locationPathname,
             }),
@@ -98,7 +98,38 @@ export default {
           type: 'updateState',
           payload: {
             user: {},
-            routeList: [],
+            routeList: [
+              {
+                id: 1,
+                name: 'ACCOUNT',
+                zhName :'账户',
+                router: '/account/profit',
+              },
+              {
+                id: 2,
+                name: 'OURTEAM',
+                zhName :'团队',
+                router: '/ourteam',
+              },
+              {
+                id:3,
+                name:'QUOTATIONS',
+                zhName:'行情',
+                router:'/quotations/stockindex'
+              },
+              {
+                id:4,
+                name:'NEWS',
+                zhName:'新闻',
+                router:'/news'
+              },
+              {
+                id:5,
+                name:'REPORT',
+                zhName:'研报',
+                router:'/report/reportlist'
+              }
+            ],
           },
         })
         yield put({ type: 'query' })

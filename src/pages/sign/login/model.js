@@ -19,7 +19,7 @@ export default {
         store.set('user', data.data)
         const {uid,token} = data.data
         yield put({ type: 'app/query',payload:{uid,token} })
-        if (!pathMatchRegexp('/login', from)) {
+        if (!pathMatchRegexp('/sign/login', from)) {
           if (from === '/') router.push('/account/profit')
           else router.push(from)
         } else {
