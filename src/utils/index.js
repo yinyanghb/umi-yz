@@ -6,7 +6,7 @@ import { i18n } from './config'
 
 export config from './config'
 export request from './request'
-
+export DATA from './data'
 export const { defaultLanguage } = i18n
 export const languages = i18n.languages.map(item => item.key)
 

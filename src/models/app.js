@@ -3,6 +3,8 @@ import { stringify } from 'qs'
 import store from 'store'
 import { refreshToken } from 'api'
 import { pathMatchRegexp } from 'utils'
+
+
 export default {
   namespace: 'app',
   state: {
@@ -13,34 +15,123 @@ export default {
         name: 'ACCOUNT',
         zhName :'账户',
         router: '/account/profit',
+        children:[
+          {
+            id:'11',
+            name:'资金收益',
+            icon:'Profit',
+            router: '/account/profit',
+            state:1,
+          },
+          {
+            id:'12',
+            name:'交易品种',
+            icon:'Assortment',
+            router: '/account/assortment',
+            state:1,
+          },
+          {
+            id:'13',
+            name:'交易量',
+            icon:'Amount',
+            router: '/account/amount',
+            state:1,
+          },
+          {
+            id:'14',
+            name:'导出',
+            icon:'Exports',
+            router: '/account/exports',
+            state:1,
+          },
+        ]
       },
       {
         id: 2,
         name: 'OURTEAM',
         zhName :'团队',
-        router: '/ourteam',
+        router: '/team/achievement',
+        children:[
+          {
+            id:'21',
+            name:'团队成就',
+            icon:'Achievement',
+            router: '/team/achievement',
+            state:2,
+          },
+          {
+            id:'22',
+            name:'卓越时刻',
+            icon:'Outstanding',
+            router: '/team/outstanding',
+            state:2,
+          }
+        ]
       },
       {
         id:3,
         name:'QUOTATIONS',
         zhName:'行情',
-        router:'/quotations/stockindex'
+        router:'/quotations/stockindex',
+        children:[
+          {
+            id:'31',
+            name:'股指',
+            icon:'Stockindex',
+            router: '/quotations/stockindex',
+            state:3,
+          },
+          {
+            id:'32',
+            name:'外汇',
+            icon:'Exchange',
+            router: '/quotations/exchange',
+            state:3,
+          },
+          {
+            id:'33',
+            name:'经济日历',
+            icon:'Calendar',
+            router: '/quotations/calendar',
+            state:3,
+          }
+        ]
       },
       {
         id:4,
         name:'NEWS',
         zhName:'新闻',
-        router:'/news'
+        router:'/news/newslist',
+        children:[
+          {
+            id:'41',
+            name:'全球快讯',
+            icon:'Newslist',
+            router: '/news/newslist',
+            state:4,
+          }
+
+        ]
       },
       {
         id:5,
         name:'REPORT',
         zhName:'研报',
-        router:'/report/reportlist'
+        router:'/report/reportlist',
+        children:[
+          {
+            id:'51',
+            name:'研报列表',
+            icon:'Report',
+            router: '/report/reportlist',
+            state:5,
+          }
+        ]
       }
     ],
     locationPathname: '',
     locationQuery: {},
+    locationState:1
   },
   subscriptions: {
     setupHistory({ dispatch, history }) {
@@ -50,6 +141,7 @@ export default {
           payload: {
             locationPathname: location.pathname,
             locationQuery: location.query,
+            locationState:location.state 
           },
         })
       })
@@ -64,7 +156,7 @@ export default {
     *query({ payload }, { call, put, select }) {
       const { uid , token } = store.get('user') || {}
       const { success, data } = yield call(refreshToken, payload||{uid,token})
-      const { locationPathname } = yield select(_ => _.app)
+      const { locationPathname,locationState } = yield select(_ => _.app)
         
         if (success&&data) {
           const  user  = data
@@ -88,6 +180,7 @@ export default {
             search: stringify({
               from: locationPathname,
             }),
+            state:locationState
           })
         }
     },
@@ -98,38 +191,6 @@ export default {
           type: 'updateState',
           payload: {
             user: {},
-            routeList: [
-              {
-                id: 1,
-                name: 'ACCOUNT',
-                zhName :'账户',
-                router: '/account/profit',
-              },
-              {
-                id: 2,
-                name: 'OURTEAM',
-                zhName :'团队',
-                router: '/ourteam',
-              },
-              {
-                id:3,
-                name:'QUOTATIONS',
-                zhName:'行情',
-                router:'/quotations/stockindex'
-              },
-              {
-                id:4,
-                name:'NEWS',
-                zhName:'新闻',
-                router:'/news'
-              },
-              {
-                id:5,
-                name:'REPORT',
-                zhName:'研报',
-                router:'/report/reportlist'
-              }
-            ],
           },
         })
         yield put({ type: 'query' })

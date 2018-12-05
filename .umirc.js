@@ -57,6 +57,7 @@ export default {
     services: resolve(__dirname, './src/services'),
     themes: resolve(__dirname, './src/themes'),
     utils: resolve(__dirname, './src/utils'),
+    sidenav:resolve(__dirname, './src/assets/images/sidenav'),
   },
   extraBabelPresets: ['@lingui/babel-preset-react'],
   extraBabelPlugins: [

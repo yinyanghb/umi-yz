@@ -2,6 +2,10 @@ import React, { PureComponent } from 'react'
 
 
 class Profit extends PureComponent{
+
+  componentWillMount(){
+    
+  }
   render(){
     return (
      <div>
