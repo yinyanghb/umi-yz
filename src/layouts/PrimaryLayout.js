@@ -65,9 +65,9 @@ class PrimaryLayout extends PureComponent {
         <Layout className={styles.container}>
           <Header {...headerProps} />
           <Bread {...BreadProps} />
-          <Layout className={styles.content}>
+          <Layout className={styles.layout}>
             <Sider {...siderProps} /> 
-            <Content >
+            <Content className={styles.content}>
             {/* {hasPermission ? children : <Error />} */}
             {children}
           </Content>

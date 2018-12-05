@@ -3,7 +3,10 @@ import Navlink from 'umi/navlink'
 import { Menu, Icon, Layout, Dropdown, Popover, Badge, List } from 'antd'
 import styles from './Header.less'
 import  {addLangPrefix} from 'utils'
+import withRouter from 'umi/withRouter'
 const { SubMenu } = Menu
+
+@withRouter
 class Header extends PureComponent {
   handleClickMenu = e => {
     e.key === 'SignOut' && this.props.onSignOut()
