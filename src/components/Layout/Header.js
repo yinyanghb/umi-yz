@@ -1,10 +1,10 @@
 import { PureComponent } from 'react'
 import Navlink from 'umi/navlink'
-import { Menu, Icon, Layout, Dropdown, Popover, Badge, List } from 'antd'
+import { Menu, Icon, Layout, Dropdown, } from 'antd'
 import styles from './Header.less'
 import  {addLangPrefix} from 'utils'
 import withRouter from 'umi/withRouter'
-const { SubMenu } = Menu
+
 
 @withRouter
 class Header extends PureComponent {
@@ -16,6 +16,7 @@ class Header extends PureComponent {
     const menu = (
       <Menu onClick={this.handleClickMenu}>
         <Menu.Item key="SignOut">退出</Menu.Item>
+        
       </Menu>
     )
     const isActive = (match,location) =>{
@@ -43,9 +44,7 @@ class Header extends PureComponent {
     return (
       <Layout.Header className={styles.header}>
         <div className={styles.leftContent}>
-          <a href="/account/profit">
             <img src="/logo.png" />
-          </a>
           <Menu
             theme="dark"
             mode="horizontal"

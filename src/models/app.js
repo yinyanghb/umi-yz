@@ -155,10 +155,10 @@ export default {
   effects: {
     *query({ payload }, { call, put, select }) {
       const { uid , token } = store.get('user') || {}
-      const { success, data } = yield call(refreshToken, payload||{uid,token})
+      const { code, data } = yield call(refreshToken, payload||{uid,token})
       const { locationPathname,locationState } = yield select(_ => _.app)
         
-        if (success&&data) {
+        if (code==="1"&&data) {
           const  user  = data
 
           yield put({
@@ -167,7 +167,7 @@ export default {
               user,
             },
           })
-          if (pathMatchRegexp('/sign/login', window.location.pathname)) {
+          if (pathMatchRegexp('/sign/login', window.location.pathname)||pathMatchRegexp('/', window.location.pathname)) {
             router.push({
               pathname: '/account/profit',
             })

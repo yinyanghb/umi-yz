@@ -3,10 +3,10 @@ import { Common } from 'components'
 import { Row, Col, Card } from 'antd'
 import styles from './style.less'
 const { LeftCard } = Common
-class Profit extends PureComponent {
+class Assortment extends PureComponent {
   componentWillMount() {}
 
-  render() {
+  render(){
     const leftProps = {
       zhTitle: '历史账户余额',
       title: 'Historical account balance',
@@ -20,7 +20,7 @@ class Profit extends PureComponent {
     return (
       <Row type="flex" className='contentInner'>
         <LeftCard {...leftProps}>
-          <div>heiheihei</div>
+          <div>hahahaha</div>
         </LeftCard>
         <Col lg={8} md={24} className='right-row'>
           <Card title={<h2>账户余额</h2>} />
@@ -30,5 +30,4 @@ class Profit extends PureComponent {
     )
   }
 }
-
-export default Profit
+export default Assortment
