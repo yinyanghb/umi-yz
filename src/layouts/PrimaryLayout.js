@@ -17,7 +17,6 @@ const { Header ,Bread ,Sider} = MyLayout
 @connect(({ app, loading }) => ({ app, loading }))
 class PrimaryLayout extends PureComponent {
   render() {
-    console.log(this.props)
     const { app, location, dispatch, children, } = this.props
     const { user, routeList } = app
 

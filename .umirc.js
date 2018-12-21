@@ -45,7 +45,7 @@ export default {
         },
       },
       hardSource: true,
-      // fastClick:true
+      fastClick:true
     }],
   ],
   alias: {
@@ -58,6 +58,8 @@ export default {
     themes: resolve(__dirname, './src/themes'),
     utils: resolve(__dirname, './src/utils'),
     sidenav:resolve(__dirname, './src/assets/images/sidenav'),
+    assets : resolve(__dirname, './src/assets'),
+    chart:resolve(__dirname,'./src/components/charts')
   },
   extraBabelPresets: ['@lingui/babel-preset-react'],
   extraBabelPlugins: [

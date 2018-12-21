@@ -3,7 +3,7 @@ import request from 'utils/request'
 
 import api from './api'
 
-const apiPrefix = 'http://192.168.102.88:8080/fund-app-lh/'
+const apiPrefix = 'https://trade.szyoze.com:13080/fund-app-lh/'
 
 const gen = params => {
   let url = apiPrefix + params

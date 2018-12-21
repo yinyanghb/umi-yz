@@ -3,6 +3,13 @@
   :global {
     .ant-card {
       background-color: transparent !important;
+      display:flex;
+      flex-direction:column;
+      height: 100%;
+      .ant-card-body{
+        flex: 1;
+        overflow: hidden;
+      }
     }
   }
 }

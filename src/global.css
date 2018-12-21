@@ -13,18 +13,10 @@ body {
  ::-webkit-scrollbar {
    display: none
  }
- .text-center{
-   text-align: center
- }
- .mb20{
-   margin-bottom: 20px
- }
- .mt20{
-   margin-top: 20px
- }
- .vm{
-  vertical-align: middle !important;
- }
+
+
+
+ 
  .ant-card{
   border: none;
 }
@@ -38,4 +30,76 @@ body {
   margin-bottom: 0;
   font-size: 11px;
   font-weight: lighter;
+}
+.ml5 {
+  margin-left: 5px !important;
+}
+.mr5 {
+  margin-right: 5px !important;
+}
+.mt10 {
+  margin-top: 10px !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mb10 {
+  margin-bottom: 10px !important;
+}
+.mb20 {
+  margin-bottom: 20px !important;
+}
+.mb30 {
+  margin-bottom: 30px !important;
+}
+.fz28 {
+  font-size: 28px !important;
+}
+.fz24 {
+  font-size: 24px !important;
+}
+.fz22 {
+  font-size: 22px !important;
+}
+.fz18 {
+  font-size: 18px !important;
+}
+.fz14 {
+  font-size: 14px !important;
+}
+.fz12 {
+  font-size: 12px !important;
+}
+.fz11 {
+  font-size: 11px !important;
+}
+.vm {
+  vertical-align: middle !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.color-gray {
+  color: #999 !important;
+}
+.font-normal {
+  font-weight: normal !important;
+}
+.font-300 {
+  font-weight: 300 !important;
+  font-family: 'Helvetica neue';
+}
+.font-lighter {
+  font-weight: lighter !important;
+}
+.flex-end {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
 }

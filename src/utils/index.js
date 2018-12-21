@@ -251,3 +251,21 @@ export function setLocale(language) {
     })
   }
 }
+
+export function processArray(array,x='x',y='y'){
+  const result = {}
+  let xData = []
+  let yData = []
+  const data = cloneDeep(array)
+
+  data.forEach((item)=>{
+    if(item[x]&&item[y]){
+      xData.push(item[x])
+      yData.push(item[y])
+    }
+  })
+
+  result[x]=xData
+  result[y]=yData
+  return result
+}

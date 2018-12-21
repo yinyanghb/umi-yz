@@ -1,3 +1,4 @@
+import { Icon } from 'antd';
 //侧边栏
 
 const Profit = require('sidenav/icon_sidenav_profit.png')
@@ -11,6 +12,8 @@ const Exchange = require('sidenav/icon_sidenav_exchange.png')
 const Calendar = require('sidenav/icon_sidenav_calendar.png')
 const Newslist = require('sidenav/icon_sidenav_news.png')
 const Report = require('sidenav/icon_sidenav_report.png')
+const Up = require('assets/up.png')
+
 
 module.exports = {
   Profit,
@@ -24,4 +27,5 @@ module.exports = {
   Calendar,
   Newslist,
   Report,
+  Up
 }

@@ -24,7 +24,6 @@ class Login extends PureComponent{
   render(){
     const {form} = this.props
     const { getFieldDecorator } = form
-    console.log(this.props,'login')
     return (
      <Fragment>
         <div className={styles.form}>
